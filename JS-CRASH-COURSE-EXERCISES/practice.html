@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+  </head>
+  <body>
+    
+    <button onclick="
+      pickSide('heads');
+    ">
+      heads
+    </button>
+
+    <button onclick="
+      pickSide('tails');
+    ">
+      tails
+    </button>
+
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+    {
+      alert(`Wins: ${score.wins}, Losses: ${score.losses}.`);
+    }
+    ">
+      Reset Score
+    </button>
+
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+          wins: 0,
+          losses: 0
+        };
+
+      function pickSide(playerPick) {
+        const computerPick = pickComputerSide();
+
+        if (playerPick === 'heads') {
+          if (computerPick === 'heads') {
+            result = 'You chose correctly!';
+          } else if (computerPick === 'tails') {
+            result = 'You chose wrongly!';
+          }
+        } else if (playerPick === 'tails') {
+          if (computerPick === 'tails') {
+            result = 'You chose correctly!'
+          } else if (computerPick === 'heads') {
+            result = 'You chose wrongly!'
+          }
+        }
+
+      if (result === 'You chose correctly!') {
+        score.wins ++;
+      } else if (result === 'You chose wrongly!') {
+        score.losses ++;
+      }
+
+       localStorage.setItem('score', JSON.stringify(score));
+
+        alert(`You chose ${playerPick}. Computer chose ${computerPick}. ${result} \n Wins: ${score.wins}, Losses: ${score.losses}`);
+      }
+
+      function pickComputerSide() {
+        const randomNumber = Math.random();
+      let computerPick = '';
+
+      if (randomNumber <= 0.5) {
+        computerPick = 'heads';
+      } else {
+        computerPick = 'tails';
+      }
+
+      let result = '';
+
+      if (computerPick === 'heads') {
+        result = 'You chose correctly!';
+      } else if (computerPick === 'tails') {
+        result = 'You chose wrongly!';
+      }
+
+      return computerPick;
+      }
+
+    </script>
+  </body>
+</html>

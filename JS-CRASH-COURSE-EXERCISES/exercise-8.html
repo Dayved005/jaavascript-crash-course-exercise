@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 8</title>
+</head>
+<body>
+  <script>
+    // 8a
+    const product = {
+      name: 'basketball',
+      price: 2095
+    };
+    // console.log(product.price);
+
+    // 8b
+    product.price += 500;
+    // console.log(product.price);
+
+    // 8c
+    product['Delivery-time'] = '3 Days';
+    // console.log(product);
+
+    // 8d
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price) {
+        return product1;
+      } else {
+        return product2;
+      }
+    }
+
+    const product1 = {
+      name: 'Basketball',
+      price: 2095
+    };
+
+    const product2 = {
+      name: 'Socks',
+      price: 5500
+    };
+
+    // console.log(comparePrice(product1, product2));
+
+    // 8e
+    function isSameProduct(product3, product4) {
+      if (product3.name === product4.name && product3.price === product4.price) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    const product3 = {
+      name: 'Basketball',
+      price: '2095'
+    };
+
+    const product4 = {
+      name: 'Socks',
+      price: 1090
+    };
+
+    const product5 = {
+      name: 'Basketball',
+      price: '2095'
+    };
+
+    // console.log(isSameProduct(product3, product4));
+    // console.log(isSameProduct(product3, product5));
+
+    // 8f
+    // console.log('Good Morning'.toLowerCase());
+    // console.log('DAYVED'.toLowerCase());
+
+    // 8g
+    // console.log('David is my name. '.repeat(6));
+
+    // 8h
+    
+  </script>
+</body>
+</html>
